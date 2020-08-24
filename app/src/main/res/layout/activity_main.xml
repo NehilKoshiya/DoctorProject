@@ -14,15 +14,15 @@
     android:textColor="#6C63FF"
     android:textSize="30dp"
     android:textStyle="bold"
-    android:fontFamily="casual"
     android:layout_centerHorizontal="true"
-    android:text="Doctor On Demand!"></TextView>
+    android:text="Doctor On Mobile!"></TextView>
     <com.synnapps.carouselview.CarouselView
         android:id="@+id/carouselView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:slideInterval="3000"
-        android:layout_marginBottom="100dp"/>
+        android:layout_marginBottom="100dp"
+        />
 
     <com.shobhitpuri.custombuttons.GoogleSignInButton
         android:id="@+id/googsign"
@@ -44,7 +44,8 @@
         android:text="Sign  Up"
         android:textColor="#fff"
         android:textSize="20dp"
-        android:textStyle="bold"></Button>
+        android:textStyle="bold"
+        android:letterSpacing="0.1"></Button>
 
     <TextView
         android:id="@+id/text"

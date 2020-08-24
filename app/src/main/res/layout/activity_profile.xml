@@ -10,12 +10,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/name"
-        android:text="name"></TextView>
+        android:text="name"
+        android:padding="50dp"></TextView>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/mail"
-        android:text="mail"></TextView>
+        android:text="mail"
+        android:padding="25dp"></TextView>
 
     <Button
         android:id="@+id/logout"
