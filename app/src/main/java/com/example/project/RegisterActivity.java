@@ -58,20 +58,21 @@ public class RegisterActivity extends AppCompatActivity {
 
 
     }
-    private void register(final String username, String email, String password) {
+    private void register(final String username, final String email, String password) {
         auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful()) {
+                try{if (task.isSuccessful()) {
                     FirebaseUser firebaseUser = auth.getCurrentUser();
-                    String userid = firebaseUser.getUid();
+                    String userId = firebaseUser.getUid();
 
-                    reference = FirebaseDatabase.getInstance().getReference("Users").child(userid);
+                    reference = FirebaseDatabase.getInstance().getReference("Users").child(userId);
 
                     HashMap<String, String> hashMap = new HashMap<>();
-                    hashMap.put("id", userid);
+                    hashMap.put("id", userId);
                     hashMap.put("username", username);
                     hashMap.put("imageURL", "default");
+                    hashMap.put("Email", email);
 
 
                     reference.setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -88,6 +89,8 @@ public class RegisterActivity extends AppCompatActivity {
 
                 } else {
                     Toast.makeText(RegisterActivity.this, "You Can't Register With This Email!!", Toast.LENGTH_SHORT);
+                } }catch (Exception e) {
+                    e.printStackTrace();
                 }
             }
         });
